@@ -13,7 +13,7 @@ public class WordCounterTest {
 	 * Read lines from a file containing "word syllable_count" and add them to
 	 * map of words.
 	 * 
-	 * @param in IpputStream to read from
+	 * @param in InputStream to read from
 	 */
 	private static Map<String, Integer> loadWords(InputStream in) throws IOException {
 		Map<String, Integer> words = new HashMap<String, Integer>();
@@ -47,12 +47,25 @@ public class WordCounterTest {
 		return words;
 	}
 
+	/**
+	 * Load words from URL.
+	 * 
+	 * @param urlname is name of URL.
+	 * @return Map of words.
+	 * @throws IOException if error occurred.
+	 */
 	private static Map<String, Integer> loadWords(String urlname) throws IOException {
 		URL url = new URL(urlname);
 		InputStream in = url.openStream();
 		return loadWords(in);
 	}
 
+	/**
+	 * Test the countSyllables method from WordCounter class and print results.
+	 * 
+	 * @param args not used.
+	 * @throws IOException if cannot read.
+	 */
 	public static void main(String[] args) throws IOException {
 		Map<String, Integer> words = loadWords(URLNAME);
 		WordCounter counter = new WordCounter();

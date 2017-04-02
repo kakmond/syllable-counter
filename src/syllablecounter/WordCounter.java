@@ -25,8 +25,7 @@ public class WordCounter {
 	 * not a word then return 0.
 	 * 
 	 * @param word is the word that you want to count.
-	 * @return the number of syllables if string parameter is not a word then
-	 *         return 0.
+	 * @return the number of syllables if string parameter is not a word then return 0.
 	 */
 	public int countSyllables(String word) {
 		syllableCount = 0;
@@ -141,7 +140,6 @@ public class WordCounter {
 	}
 
 	/**
-	 * 
 	 * SingleVowelState is a State that the character has a vowel (include y)
 	 * handle into the next State.
 	 *
@@ -166,7 +164,6 @@ public class WordCounter {
 	}
 
 	/**
-	 * 
 	 * MultiVowelState is a State that the character has a vowel and handle into
 	 * the next State.
 	 *
@@ -209,7 +206,6 @@ public class WordCounter {
 	 * Hyphen is a State that the character is a hyphen and handle into the next
 	 * State.
 	 * 
-	 *
 	 */
 	class Hyphen extends State {
 		@Override
@@ -227,7 +223,6 @@ public class WordCounter {
 	/**
 	 * NonWordState is a State that the character is not vowel and letter and
 	 * set syllableCount to 0.
-	 *
 	 *
 	 */
 	class NonWordState extends State {
