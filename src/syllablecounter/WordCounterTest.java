@@ -15,8 +15,7 @@ public class WordCounterTest {
 	 * Read lines from a file containing "word syllable_count" and add them to
 	 * map of words.
 	 * 
-	 * @param in
-	 *            InputStream to read from
+	 * @param in InputStream to read from
 	 */
 	private static Map<String, Integer> loadWords(InputStream in) throws IOException {
 		Map<String, Integer> words = new HashMap<String, Integer>();
@@ -65,10 +64,8 @@ public class WordCounterTest {
 	/**
 	 * Test the syllable counter using words from a file.
 	 * 
-	 * @param args
-	 *            not used
-	 * @throws IOException
-	 *             if file cannot be read
+	 * @param args not used
+	 * @throws IOException if file cannot be read
 	 */
 	public static void main(String[] args) {
 		Map<String, Integer> words = null;
