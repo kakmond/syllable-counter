@@ -46,14 +46,15 @@ public class Main {
 	}
 
 	/**
-	 * read all words from URL ,count syllables ,count words and print description.
+	 * read all words from URL ,count syllables ,count words and print
+	 * description.
 	 * 
 	 * @param args not used.
 	 */
 	public static void main(String[] args) {
-		OOSyllableCounter counter=new OOSyllableCounter();
-	    int countSyllables = 0;
-	    int countWord = 0;
+		OOSyllableCounter counter = new OOSyllableCounter();
+		int countSyllables = 0;
+		int countWord = 0;
 		stopwatch.start();
 		List<String> allWords = getWord(DICT_URL);
 		for (String word : allWords) {
