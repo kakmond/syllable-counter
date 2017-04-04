@@ -17,11 +17,7 @@ import stopwatch.Stopwatch;
  *
  */
 public class Main {
-
 	private static final String DICT_URL = "http://se.cpe.ku.ac.th/dictionary.txt";
-	private static int countSyllables = 0;
-	private static int countWord = 0;
-	private static WordCounter counter = new WordCounter();
 	private static Stopwatch stopwatch = new Stopwatch();
 
 	/**
@@ -50,38 +46,25 @@ public class Main {
 	}
 
 	/**
-	 * For count all syllables and words.
+	 * read all words from URL ,count syllables ,count words and print description.
 	 * 
-	 * @param words is List of words that you want to analyze.
+	 * @param args not used.
 	 */
-	private static void analyzeWords(List<String> words) {
-		for (String word : words) {
+	public static void main(String[] args) {
+		OOSyllableCounter counter=new OOSyllableCounter();
+	    int countSyllables = 0;
+	    int countWord = 0;
+		stopwatch.start();
+		List<String> allWords = getWord(DICT_URL);
+		for (String word : allWords) {
 			int syllables = counter.countSyllables(word);
 			if (syllables != 0)
 				countWord++;
 			countSyllables += syllables;
 		}
-	}
-
-	/**
-	 * print result and description.
-	 */
-	private static void printResult() {
+		stopwatch.stop();
 		System.out.println("Reading words from " + DICT_URL);
 		System.out.println("Counted " + countSyllables + " syllables in " + countWord + " words");
 		System.out.printf("Elapse time: %.3f sec\n", stopwatch.getElapsed());
-	}
-
-	/**
-	 * read all words from URL ,count syllables ,word and print description.
-	 * 
-	 * @param args not used.
-	 */
-	public static void main(String[] args) {
-		stopwatch.start();
-		List<String> allWords = getWord(DICT_URL);
-		analyzeWords(allWords);
-		stopwatch.stop();
-		printResult();
 	}
 }

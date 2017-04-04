@@ -15,7 +15,7 @@ public class WordCounterTest {
 	 * Read lines from a file containing "word syllable_count" and add them to
 	 * map of words.
 	 * 
-	 * @param in InputStream to read from
+	 * @param in InputStream to read from.
 	 */
 	private static Map<String, Integer> loadWords(InputStream in) throws IOException {
 		Map<String, Integer> words = new HashMap<String, Integer>();
@@ -80,7 +80,7 @@ public class WordCounterTest {
 			System.exit(1);
 		}
 
-		WordCounter counter = new WordCounter();
+		OOSyllableCounter counter = new OOSyllableCounter();
 		int correct = 0;
 		int incorrect = 0;
 		for (String word : words.keySet()) {

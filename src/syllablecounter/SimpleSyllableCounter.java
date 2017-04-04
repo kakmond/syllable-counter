@@ -1,7 +1,7 @@
 package syllablecounter;
 
 /**
- * A SimpleSyllableCounter class that count syllables in a String.
+ * A SimpleSyllableCounter class that count syllables in a String by using a simple non-OO approach .
  * 
  * @author Wongsathorn Panichkurkul
  *
